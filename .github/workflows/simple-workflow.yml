@@ -9,7 +9,8 @@ on:
 #jobs that run sequentially, and also can run in paralles
 jobs:
   build:
-    #type of runner this job will run on
+    #type of runner this job will run on, a machine with GH runner app installed.
+    #you can run the workflows on GH hosted runners or self-hosted runners
     runs-on: ubuntu-latest
     # steps are a sequence of tasks , that are part of this job.
     steps:
@@ -18,4 +19,8 @@ jobs:
     #run a single command using the runner shell
     - name: Run a 1 line script
       run: echo Hello , this is the FIRST action
+    - name: Run multiline script
+      run: |
+        echo Hello World 1
+        echo Hello World 2
     
